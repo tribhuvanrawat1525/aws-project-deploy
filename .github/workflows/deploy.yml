@@ -24,9 +24,17 @@ jobs:
             echo "Pulling latest code..."
             git pull origin main
 
-            echo "Fixing permissions..."
+            echo "Setting ownership..."
             sudo chown -R ubuntu:ubuntu /var/www/html/laravel-app
-            sudo chown -R www-data:www-data storage bootstrap/cache
+
+            echo "Setting Laravel writable directories..."
+            sudo chown -R www-data:www-data storage
+            sudo chown -R www-data:www-data bootstrap/cache
+            sudo chown -R www-data:www-data database
+
+            sudo chmod -R 775 storage
+            sudo chmod -R 775 bootstrap/cache
+            sudo chmod -R 775 database
 
             echo "Installing dependencies..."
             composer install --no-dev --optimize-autoloader
