@@ -23,12 +23,10 @@ body{
 /* Navbar */
 
 .navbar{
-    background:#111827;
-    color:white;
-    padding:18px 80px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    background:#0f172a;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo{
@@ -151,6 +149,63 @@ body{
     color:white;
 }
 
+.badge{
+    display:inline-block;
+    padding:10px 18px;
+    background:#dbeafe;
+    color:#1d4ed8;
+    border-radius:50px;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero{
+    min-height:90vh;
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #2563eb
+    );
+    color:white;
+}
+
+.hero p{
+    color:#cbd5e1;
+}
+.stats{
+    background:#ffffff;
+    padding:80px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    text-align:center;
+}
+
+.stats h2{
+    color:#2563eb;
+    font-size:42px;
+    margin-bottom:10px;
+}
+.card{
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.primary,
+.secondary,
+.btn{
+    transition:.3s;
+}
+
+.primary:hover,
+.btn:hover{
+    transform:translateY(-2px);
+}
 </style>
 </head>
 <body>
@@ -184,13 +239,21 @@ body{
 
     <div class="hero-content">
 
-        <h1>
-            Laravel Application Deployed on AWS
-        </h1>
+    <div class="badge">
+        🚀 Laravel 13 • AWS Cloud • Production Ready
+    </div>
 
-        <p>
-            A modern cloud-powered Laravel application running on AWS infrastructure with secure authentication, scalable architecture, and production-ready deployment.
-        </p>
+    <h1>
+        Deploy Laravel Applications
+        <br>
+        Seamlessly on AWS
+    </h1>
+
+    <p>
+        Experience a modern Laravel application hosted on AWS infrastructure,
+        featuring secure authentication, scalable cloud architecture,
+        automated deployments, and enterprise-grade reliability.
+    </p>
 
         <div class="hero-buttons">
 
@@ -216,7 +279,7 @@ body{
 
 </section>
 
-<section class="features">
+{{-- <section class="features">
 
     <h2 class="section-title">
         Features
@@ -268,6 +331,46 @@ body{
 
     </div>
 
+</section> --}}
+
+<section class="features">
+
+    <h2 class="section-title">
+        AWS Services Used
+    </h2>
+
+    <div class="feature-grid">
+
+        <div class="card">
+            <h3>☁️ Amazon EC2</h3>
+            <p>
+                Secure and scalable cloud hosting for Laravel applications.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🗄️ Amazon RDS</h3>
+            <p>
+                Managed relational databases with backups and monitoring.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>📦 Amazon S3</h3>
+            <p>
+                Reliable object storage for files, images and backups.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>📊 CloudWatch</h3>
+            <p>
+                Monitoring, logs and performance tracking.
+            </p>
+        </div>
+
+    </div>
+
 </section>
 
 <section class="aws-section">
@@ -281,7 +384,49 @@ body{
     </p>
 
 </section>
+<section class="stats">
 
+    <div>
+        <h2>99.9%</h2>
+        <p>Availability</p>
+    </div>
+
+    <div>
+        <h2>100%</h2>
+        <p>Secure Authentication</p>
+    </div>
+
+    <div>
+        <h2>AWS</h2>
+        <p>Cloud Hosted</p>
+    </div>
+
+    <div>
+        <h2>Laravel 13</h2>
+        <p>Latest Framework</p>
+    </div>
+
+</section>
+<section class="aws-section">
+
+    <h2>
+        Ready to Explore the Platform?
+    </h2>
+
+    <p>
+        Register today and experience a production-ready Laravel application
+        running on AWS cloud infrastructure.
+    </p>
+
+    <br><br>
+
+    @guest
+        <a href="{{ route('register') }}" class="primary">
+            Create Free Account
+        </a>
+    @endguest
+
+</section>
 <footer class="footer">
     © {{ date('Y') }} AWS Laravel Project | Built with Laravel & AWS
 </footer>
