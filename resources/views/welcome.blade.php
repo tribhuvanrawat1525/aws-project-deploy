@@ -279,7 +279,7 @@ body{
 
 </section>
 
-<section class="features">
+{{-- <section class="features">
 
     <h2 class="section-title">
         Features
@@ -331,7 +331,7 @@ body{
 
     </div>
 
-</section>
+</section> --}}
 
 <section class="features">
 
