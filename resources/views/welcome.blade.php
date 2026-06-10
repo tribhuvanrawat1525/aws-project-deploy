@@ -244,7 +244,7 @@ body{
     </div>
 
     <h1>
-        Deploy Laravel Applications
+        Deploy Laravel Applications12
         <br>
         Seamlessly on AWS
     </h1>
